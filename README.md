@@ -84,13 +84,16 @@ sudo reboot
 ### ssh into pi
 ssh pi
 ### cd to this Folder
-/home/pi/12.48inch-e-paper/RaspberryPi/python/examples
+cd /home/pi/12.48inch-e-paper/RaspberryPi/python/examples
 
 ### run example Code
 sudo python3 epd_12in48B_test.py
 
+### restart pi
+sudo reboot 
+
 ### shutdown pi
-sudo shutdown
+sudo shutdown now
 ``````
 #### Fotos
 
