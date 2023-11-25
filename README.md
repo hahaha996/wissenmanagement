@@ -88,6 +88,9 @@ ssh pi
 
 ### run example Code
 sudo python3 epd_12in48B_test.py
+
+### shutdown pi
+sudo shutdown
 ``````
 #### Fotos
 
