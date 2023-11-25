@@ -110,4 +110,19 @@ Die Kabel sollten so angeschlossen werden, wie es auf dem Bild des Herstellers g
 
 
 
+```bash
+Enter Download/upload mode for esp32: hold boot button
+```
+### Note 26.11.23
+
+**Issue: Incompatibility when combining LoRa and E-ink on Raspberry Pi GPIO**
+
+**Problem Description:**
+
+- While the LoRa module and E-ink display function independently, attempting to combine the two leads to failure. It seems that they are unable to share the GPIO (General Purpose Input/Output).
+
+**To-Do:**
+
+- Modify the `test_send_from_pi_over_lora.py` script to incorporate signal testing.
+- Separate the GPIO configurations for the LoRa module and the Raspberry Pi to prevent conflicts.
 
