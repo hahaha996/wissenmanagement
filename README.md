@@ -126,3 +126,20 @@ Enter Download/upload mode for esp32: hold boot button
 - Modify the `test_send_from_pi_over_lora.py` script to incorporate signal testing.
 - Separate the GPIO configurations for the LoRa module and the Raspberry Pi to prevent conflicts.
 
+
+#### Note 9.12.2023
+Copy all code files from Waveshare's example `12.48inch-e-paper/esp32/esp32-epd-12in48/src` to `esp32/esp32_12.48B/src`. To run the code in platformio
+
+All setup guide is here: https://www.waveshare.com/wiki/12.48inch_e-Paper_Module_(B)#Software_setup
+
+#### Note 11.12.2023
+
+##### Libraries install for pi
+
+```bash
+sudo apt-get install bluetooth bluez libbluetooth-dev
+sudo python3 -m pip install pybluez
+```
+- The folder `esp32_12.48B` is the official folder that encompasses all functions, while `esp32_12.48B_draw` is specifically designed for drawing dummy data with the ESP32.
+
+- After inspecting the sensor, we observed a very slow decrease in temperature. The indoor temperature is 26 degrees Celsius, and the outdoor temperature is around 5 degrees. However, after 1 minute, the temperature only dropped by 1 degree, indicating that we received data reporting a temperature of 25 degrees instead of the actual 5 degrees. Therefore, the conclusion is that the quality of this sensor appears to be subpar.

@@ -42,7 +42,8 @@ void loop() {
   // Compute heat index in Celsius (isFahreheit = false)
   float hic = dht.computeHeatIndex(t, h, false);
   char resultString[100];
-  sprintf(resultString, "%d: Humidity: %.2f%%, Temp: %.2fC, Heat index: %.2fC", counter, h, t, hic);
+  // sprintf(resultString, "%d,lichtenberg,Humidity: %.2f%%, Temp: %.2fC, Heat index: %.2fC", counter, h, t, hic);
+  sprintf(resultString, "%d,Lichtenberg,%.2f,%.2f,%.2f", counter, h, t, hic);
   Serial.println(resultString);
 
 
