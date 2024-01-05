@@ -1,0 +1,14 @@
+[Unit]
+Description=Pi Controller for LoRa Eink Project
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/pi_controller.py
+Restart=no
+User=pi
+Group=pi
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+

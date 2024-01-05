@@ -143,3 +143,20 @@ sudo python3 -m pip install pybluez
 - The folder `esp32_12.48B` is the official folder that encompasses all functions, while `esp32_12.48B_draw` is specifically designed for drawing dummy data with the ESP32.
 
 - After inspecting the sensor, we observed a very slow decrease in temperature. The indoor temperature is 26 degrees Celsius, and the outdoor temperature is around 5 degrees. However, after 1 minute, the temperature only dropped by 1 degree, indicating that we received data reporting a temperature of 25 degrees instead of the actual 5 degrees. Therefore, the conclusion is that the quality of this sensor appears to be subpar.
+
+
+220ohm
+
+```bash
+sudo nano  /etc/systemd/system/pi_controller.service
+sudo systemctl daemon-reload
+sudo systemctl enable pi_controller.service
+sudo systemctl start pi_controller.service
+
+# see logs
+journalctl -xefu pi_controller
+
+# Debug
+journalctl -u pi_controller.service -b
+
+```

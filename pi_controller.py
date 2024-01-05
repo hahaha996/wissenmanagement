@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import threading, signal
 import time, random, string, struct, array, copy
 import bluetooth
@@ -188,6 +190,7 @@ def signal_handler(sig, frame):
 
 # Register the Ctrl+C signal handler
 signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
 
 # Create and start worker threads
 worker1 = threading.Thread(target=lora_worker, args=(1, 1))

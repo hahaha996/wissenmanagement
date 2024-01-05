@@ -12,6 +12,9 @@
 #define DHTPIN 25     // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 DHT dht(DHTPIN, DHTTYPE);
+// Array of locations
+String locations[] = {"Lichtenberg", "Mitte", "Spandau", "Pankow"};
+
 
 int counter;
 
@@ -43,7 +46,13 @@ void loop() {
   float hic = dht.computeHeatIndex(t, h, false);
   char resultString[100];
   // sprintf(resultString, "%d,lichtenberg,Humidity: %.2f%%, Temp: %.2fC, Heat index: %.2fC", counter, h, t, hic);
-  sprintf(resultString, "%d,Lichtenberg,%.2f,%.2f,%.2f", counter, h, t, hic);
+
+  // Generate a random index to select a location
+  int randomIndex = random(4); // Assuming 4 locations
+
+  sprintf(resultString, "%d,%s,%.2f,%.2f,%.2f", counter, locations[randomIndex].c_str(), h+randomIndex*2, t+randomIndex*2, hic+randomIndex*2);
+
+  // sprintf(resultString, "%d,Lichtenberg,%.2f,%.2f,%.2f", counter, h, t, hic);
   Serial.println(resultString);
 
 
