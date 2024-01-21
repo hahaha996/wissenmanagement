@@ -28,7 +28,12 @@ def parse_lora_msg(msg):
     # 'data': {'humid': '35.80', 'temp': '27.20', 
     # 'heat_index': '26.8', 'updated_at_ms': 1702323375488}}
     data_list = msg.split(",")
-    if len(data_list) != 5:
+    # 388,Spandau,31.90,30.30,29.71
+    # The expected format of the message is: Counter,Location,Humidity,Temperature,HeatIndex.
+    # If the length of the data list is not 5, it could indicate that the data is
+    # either corrupted or originated from an unintended source. In such cases, the
+    # function returns None to indicate an invalid or irrelevant message.
+    if len(data_list) != 5: 
         return None
     parsed_data = {}
     try:
@@ -60,8 +65,8 @@ def lora_worker(arg1, arg2):
     if not LoRa.begin(busId, csId, resetPin, irqPin, txenPin, rxenPin) :
         raise Exception("Something wrong, can't begin LoRa radio")
 
-    # Set frequency to 915 Mhz
-    print("Set frequency to 915 Mhz")
+    # Set frequency to 866 Mhz
+    print("Set frequency to 866 Mhz")
     LoRa.setFrequency(866000000)
 
     # Set TX power, this function will set PA config with optimal setting for requested TX power
@@ -85,7 +90,7 @@ def lora_worker(arg1, arg2):
     # LoRa.setCrcEnable(True)                                         # Set CRC enable
 
     # Set syncronize word for public network (0x34)
-    print("Set syncronize word to 0x34")
+    print("Set syncronize word to 0xF3")
     LoRa.setSyncWord(0xF3)
 
     print("\n-- LoRa Transmitter --\n")
@@ -119,6 +124,7 @@ def lora_worker(arg1, arg2):
 
     print("## Thread LoRa: stop.")
 
+# sourcecode: https://que0le.github.io/posts/pi-bluetooth/
 def bluetooth_worker(arg1, arg2):
     print("## Thread BT  : started.")
     format_string = 'I100s10f10f10f10Q'
@@ -177,8 +183,6 @@ def bluetooth_worker(arg1, arg2):
         time.sleep(5)
 
     print("## Thread BT  : stop.")
-
-
 
 
 

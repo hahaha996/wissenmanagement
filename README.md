@@ -147,12 +147,20 @@ sudo python3 -m pip install pybluez
 
 220ohm
 
+
+## Make pi_controller start with system
 ```bash
+# automaticly to start pi. paste from here:
+# ./pi_controller.service
 sudo nano  /etc/systemd/system/pi_controller.service
+# Reload systemctl to update 
 sudo systemctl daemon-reload
+
+# Now, enable the service
 sudo systemctl enable pi_controller.service
-sudo systemctl status pi_controller.service
 sudo systemctl start pi_controller.service
+# Check if all green
+sudo systemctl status pi_controller.service
 
 # see logs
 journalctl -xefu pi_controller
