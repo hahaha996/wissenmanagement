@@ -98,7 +98,7 @@ void setup()
                         char t_buffer[80];
                         timeInfo = localtime(&unixTime);
                         strftime(t_buffer, sizeof(t_buffer), "%Y-%m-%d %H:%M:%S", timeInfo);
-                        Serial.printf("Humid: %f, Temp: %f, Heat: %f, Last Updated: %s ",
+                        Serial.printf("Humid: %f, Temp: %f, Heat: %f, letzte Aktualisierung: %s ",
                                       pl.humids[i], pl.temps[i], pl.heats[i], t_buffer);
                         Serial.println();
                     }

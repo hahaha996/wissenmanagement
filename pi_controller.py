@@ -12,12 +12,12 @@ data_lock = threading.Lock()
 
 # TODO: might need to adapt "format_string" var if this list is updated
 # Also update eink-esp32
-remote_station_names = ["Lichtenberg", "FriedKreuz", "Mitte", "Spandau"]
+remote_station_names = ["Lichtenberg", "Mitte", "Spandau", "Pankow"]
 data = {
     "Lichtenberg": {"humid": 99.99, "temp": 99.99, "heat_index": 99.99, "updated_at_ms": 99},
-    "FriedKreuz": {"humid": 99.99, "temp": 99.99, "heat_index": 99.99, "updated_at_ms": 99},
     "Mitte": {"humid": 99.99, "temp": 99.99, "heat_index": 99.99, "updated_at_ms": 99},
     "Spandau": {"humid": 99.99, "temp": 99.99, "heat_index": 99.99, "updated_at_ms": 99},
+    "Pankow": {"humid": 99.99, "temp": 99.99, "heat_index": 99.99, "updated_at_ms": 99},
 }
 
 

@@ -53,8 +53,13 @@ void setup()
     // Paint_DrawLine(x2, y1, x1, y2, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
     // Paint_DrawCircle(x0, y0, r, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_2X2);
 
-    Paint_DrawString_EN(40, 50, "Wetter in Berlin nach Bezirken", &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(40, 50, "WETTER IN MITTE", &Font24, WHITE, BLACK);
     // Paint_DrawRectangle(40, 20, 435, 60, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_3X3);
+    Paint_DrawString_EN(40, 80, " 36 oC", &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(100, 80, "Partly ", &Font20, WHITE, BLACK);
+    Paint_DrawString_EN(150, 80, "Feels Like    84", &Font20, WHITE, BLACK);
+    Paint_DrawString_EN(200, 80, "Humidity    62%", &Font20, WHITE, BLACK);
+
     Paint_DrawLine(40, 200, 1244, 200, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
     Paint_DrawLine(40, 200, 40, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
     Paint_DrawLine(1244, 200, 1244, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);

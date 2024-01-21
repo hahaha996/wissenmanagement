@@ -151,6 +151,7 @@ sudo python3 -m pip install pybluez
 sudo nano  /etc/systemd/system/pi_controller.service
 sudo systemctl daemon-reload
 sudo systemctl enable pi_controller.service
+sudo systemctl status pi_controller.service
 sudo systemctl start pi_controller.service
 
 # see logs

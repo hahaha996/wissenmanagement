@@ -60,7 +60,7 @@ int draw_normal_message(struct payload pl)
     // Paint_DrawLine(x2, y1, x1, y2, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
     // Paint_DrawCircle(x0, y0, r, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_2X2);
 
-    Paint_DrawString_EN(40, 50, "Wetter in Berlin nach Bezirken", &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(40, 50, "Berlin weather by districts", &Font24, WHITE, BLACK);
     // Paint_DrawRectangle(40, 20, 435, 60, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_3X3);
     Paint_DrawLine(40, 200, 1244, 200, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
     Paint_DrawLine(40, 200, 40, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
@@ -69,29 +69,29 @@ int draw_normal_message(struct payload pl)
     Paint_DrawLine(40, 491, 1244, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
 
     Paint_DrawString_EN(60, 220, "Lichtenberg:", &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Temp: %.2fC", pl.temps[0]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Temperatur: %.2fC", pl.temps[0]);
     Paint_DrawString_EN(60, 280, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Feuchtigkeit: %.2fC", pl.humids[0]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Humidity: %.2fC", pl.humids[0]);
     Paint_DrawString_EN(60, 320, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "gefuehlte Temp: %.2fC", pl.heats[0]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Feels like: %.2fC", pl.heats[0]);
     Paint_DrawString_EN(60, 360, str_buffer, &Font24, WHITE, BLACK);
     unixTime = pl.last_updates[0];
     timeInfo = localtime(&unixTime);
     strftime(t_buffer, sizeof(t_buffer), "%Y-%m-%d %H:%M:%S", timeInfo);
-    snprintf(str_buffer, MAX_STR_BUFF, "Last updated: %s", t_buffer);
+    snprintf(str_buffer, MAX_STR_BUFF, "Last Updated: %s", t_buffer);
     Paint_DrawString_EN(60, 400, str_buffer, &Font20, WHITE, BLACK);
 
     Paint_DrawString_EN(627, 220, "Mitte:", &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Temp: %.2fC", pl.temps[1]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Temperatur: %.2fC", pl.temps[1]);
     Paint_DrawString_EN(627, 280, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Feuchtigkeit: %.2fC", pl.humids[1]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Humidity: %.2fC", pl.humids[1]);
     Paint_DrawString_EN(627, 320, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "gefuehlte Temp: %.2fC", pl.heats[1]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Feels like: %.2fC", pl.heats[1]);
     Paint_DrawString_EN(627, 360, str_buffer, &Font24, WHITE, BLACK);
     unixTime = pl.last_updates[1];
     timeInfo = localtime(&unixTime);
     strftime(t_buffer, sizeof(t_buffer), "%Y-%m-%d %H:%M:%S", timeInfo);
-    snprintf(str_buffer, MAX_STR_BUFF, "Last updated: %s", t_buffer);
+    snprintf(str_buffer, MAX_STR_BUFF, "Last Updated: %s", t_buffer);
     Paint_DrawString_EN(627, 400, str_buffer, &Font20, WHITE, BLACK);
 
     EPD_12in48B_SendBlack1(Image);
@@ -111,29 +111,29 @@ int draw_normal_message(struct payload pl)
     Paint_DrawLine(607, 0, 607, 291, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
 
     Paint_DrawString_EN(60, 20, "Spandau:", &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Temp: %.2fC", pl.temps[2]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Temperatur %.2fC", pl.temps[2]);
     Paint_DrawString_EN(60, 80, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Feuchtigkeit: %.2fC", pl.humids[2]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Humidity: %.2fC", pl.humids[2]);
     Paint_DrawString_EN(60, 120, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "gefuehlte Temp: %.2fC", pl.heats[2]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Feels like: %.2fC", pl.heats[2]);
     Paint_DrawString_EN(60, 160, str_buffer, &Font24, WHITE, BLACK);
     unixTime = pl.last_updates[2];
     timeInfo = localtime(&unixTime);
     strftime(t_buffer, sizeof(t_buffer), "%Y-%m-%d %H:%M:%S", timeInfo);
-    snprintf(str_buffer, MAX_STR_BUFF, "Last updated: %s", t_buffer);
+    snprintf(str_buffer, MAX_STR_BUFF, "Last Updated: %s", t_buffer);
     Paint_DrawString_EN(60, 200, str_buffer, &Font20, WHITE, BLACK);
 
     Paint_DrawString_EN(627, 20, "Pankow:", &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Temp: %.2fC", pl.temps[3]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Temperatur: %.2fC", pl.temps[3]);
     Paint_DrawString_EN(627, 80, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "Feuchtigkeit: %.2fC", pl.humids[3]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Humidity: %.2fC", pl.humids[3]);
     Paint_DrawString_EN(627, 120, str_buffer, &Font24, WHITE, BLACK);
-    snprintf(str_buffer, MAX_STR_BUFF, "gefuehlte Temp: %.2fC", pl.heats[3]);
+    snprintf(str_buffer, MAX_STR_BUFF, "Feels like: %.2fC", pl.heats[3]);
     Paint_DrawString_EN(627, 160, str_buffer, &Font24, WHITE, BLACK);
     unixTime = pl.last_updates[3];
     timeInfo = localtime(&unixTime);
     strftime(t_buffer, sizeof(t_buffer), "%Y-%m-%d %H:%M:%S", timeInfo);
-    snprintf(str_buffer, MAX_STR_BUFF, "Last updated: %s", t_buffer);
+    snprintf(str_buffer, MAX_STR_BUFF, "Last Updated: %s", t_buffer);
     Paint_DrawString_EN(627, 200, str_buffer, &Font20, WHITE, BLACK);
 
     EPD_12in48B_SendBlack2(Image);
