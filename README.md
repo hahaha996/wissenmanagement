@@ -161,6 +161,8 @@ sudo systemctl enable pi_controller.service
 sudo systemctl start pi_controller.service
 # Check if all green
 sudo systemctl status pi_controller.service
+# sometimes the data is not updated, should restart service
+sudo systemctl restart pi_controller.service
 
 # see logs
 journalctl -xefu pi_controller
