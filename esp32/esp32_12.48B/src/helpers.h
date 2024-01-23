@@ -221,15 +221,25 @@ int draw_wakeup_button_msg()
     // Paint_DrawLine(x2, y1, x1, y2, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
     // Paint_DrawCircle(x0, y0, r, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_2X2);
 
-    Paint_DrawString_EN(40, 50, "Test wake up message!", &Font24, WHITE, BLACK);
-    // Paint_DrawRectangle(40, 20, 435, 60, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_3X3);
-    Paint_DrawLine(40, 200, 1244, 200, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
-    Paint_DrawLine(40, 200, 40, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
-    Paint_DrawLine(1244, 200, 1244, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
-    Paint_DrawLine(607, 200, 607, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
-    Paint_DrawLine(40, 491, 1244, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
+    // printf("3.Drawing up Half screen red\r\n");
+    // Paint_Clear(WHITE);
+    Paint_DrawString_EN(600, 70, "Warnung!", &Font24, WHITE, BLACK);
+    EPD_12in48B_SendRed1(Image);
+
+    Paint_DrawString_EN(70, 150, "Es liegt eine akute Notfallsituation vor. Bitte bleiben Sie ruhig", &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(70, 190, "und befolgen Sie die Anweisungen der oertlichen Behoerden.", &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(70, 230, "Bleiben Sie ueber Rundfunkdurchsagen oder lokale Warnsysteme informiert. ", &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(70, 270, "Ihre Sicherheit hat oberste Prioritaet! ", &Font24, WHITE, BLACK);
 
     EPD_12in48B_SendBlack1(Image);
+    // // Paint_DrawRectangle(40, 20, 435, 60, BLACK, DRAW_FILL_EMPTY, DOT_PIXEL_3X3);
+    // Paint_DrawLine(40, 200, 1244, 200, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
+    // Paint_DrawLine(40, 200, 40, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
+    // Paint_DrawLine(1244, 200, 1244, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
+    // Paint_DrawLine(607, 200, 607, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
+    // Paint_DrawLine(40, 491, 1244, 491, BLACK, LINE_STYLE_SOLID, DOT_PIXEL_3X3);
+
+  
 
     EPD_12in48B_TurnOnDisplay();
     DEV_Delay_ms(2000);
