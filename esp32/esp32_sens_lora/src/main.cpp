@@ -52,6 +52,8 @@ void loop() {
   int randomIndex = random(4); // Assuming 4 locations
 
   sprintf(resultString, "%d,%s,%.2f,%.2f,%.2f", counter, locations[randomIndex].c_str(), h+randomIndex*2, t+randomIndex*2, hic+randomIndex*2);
+  //Fake data was established by adding a random index, multiplied by 2, to real data.
+  // sprintf(resultString, "%d,%s,%.2f,%.2f,%.2f", counter, locations[randomIndex].c_str(), h, t, hic);
 
   // sprintf(resultString, "%d,Lichtenberg,%.2f,%.2f,%.2f", counter, h, t, hic);
   Serial.println(resultString); // Print the result string to the serial monitor.
